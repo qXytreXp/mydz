@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="add_lesson">
+    	<h2 style="text-align: center;">
+    		<strong>Реєстрація</strong>
+    	</h2>
+    	<form action="{% url 'login:signup' %}" method='POST'>
+    		{% csrf_token %}
+    		<p style="margin-right: 262px;"><strong>Ім'я</strong></p>
+    		<input type="text" style="width: 300px;" placeholder="First name" name="first_name"><br>
+    		<p style="margin-right: 222px;"><strong>Прізвище</strong></p>
+    		<input type="text" style="width: 300px;" placeholder="Last name" name="last_name"><br>
+    		<p style="margin-right: 250px;"><strong>E-mail</strong></p>
+    		<input type="text" style="width: 300px;" placeholder="E-mail" name="email"><br>
+    		<p style="margin-right: 235px;"><strong>Пароль</strong></p>
+    		<input type="password" style="width: 300px;" placeholder="password" name="password"></input><br>
+    		<p style="margin-right: 157px;"><strong>Повторіть пароль</strong></p>
+    		<input type="password" style="width: 300px;" placeholder="Repeat password" name="repeat_password"></input><br>
+    		{% for error in errors %}
+    			<p style="color: red;"><strong>*{{error}}</strong></p>
+    		{% endfor %}
+    		<button class="btn btn-primary" type="submit" style="margin-left: 185px; margin-top: 5px;">Підтвердити</button>
+    	</form>
+    </div>
+{% endblock %}

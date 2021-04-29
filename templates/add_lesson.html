@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="add_lesson">
+    	<h2 style="text-align: center;">
+    		<strong>Добавити урок</strong>
+    	</h2>
+    	<form action="{% url 'main:add_lesson' day_id %}" method='POST'>
+    		{% csrf_token %}
+    		<p style="margin-right: 192px;"><strong>Назва уроку</strong></p>
+    		<input type="text" placeholder="Назва уроку" style="width: 300px;" name="name"><br>
+    		<p style="margin-right: 140px;"><strong>Домашнє завдання</strong></p>
+    		<textarea style="width: 300px; height: 100px;" placeholder="Домашнє завдання" name="task"></textarea><br>
+    		{% for error in errors %}
+    			<p style="color: red;"><strong>*{{error}}</strong></p>
+    		{% endfor %}
+    		<button class="btn btn-primary" type="submit" style="margin-left: 220px;">Додати</button>
+    	</form>
+    </div>
+{% endblock %}

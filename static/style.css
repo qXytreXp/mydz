@@ -1,0 +1,18 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+._class {
+	text-align: right;
+	margin-right: 13px;
+}
+
+.day {
+	margin-bottom: 100px;
+}
+
+.add_lesson {
+	text-align: center;
+
+}

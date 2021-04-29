@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="add_lesson">
+    	<h2 style="text-align: center;">
+    		<strong>Вхід</strong>
+    	</h2>
+    	<form action="{% url 'login:signin' %}" method='POST'>
+    		{% csrf_token %}
+    		<p style="margin-right: 245px;"><strong>E-mail</strong></p>
+    		<input type="text" style="width: 300px;" placeholder="E-mail" name="email"><br>
+    		<p style="margin-right: 235px;"><strong>Пароль</strong></p>
+    		<input type="password" style="width: 300px;" placeholder="password" name="password"></input><br>
+    		{% for error in errors %}
+    			<p style="color: red;"><strong>*{{error}}</strong></p>
+    		{% endfor %}
+    		<button class="btn btn-primary" type="submit" style="margin-left: 185px; margin-top: 5px;">Підтвердити</button>
+    	</form>
+    </div>
+{% endblock %}
