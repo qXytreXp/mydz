@@ -56,7 +56,7 @@
 					<div class="day">
 						<h1 style="text-align: center;">
 							<strong>{{day.day}}</strong>
-							{% if user.is_editorr %}
+							{% if user.is_editor %}
 								<a href="{% url 'main:add_lesson' day.id %}" style="text-decoration: none;">+</a>
 							{% endif %}
 						</h1>
