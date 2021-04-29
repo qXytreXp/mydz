@@ -33,6 +33,9 @@
 		        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
 		        {% if user.is_authenticated %}
 		        	<p class="nav-link active">{{user.first_name}} {{user.last_name}}</p>
+			        {% if user.is_superuser %}
+		            	    <a class="nav-link active" href="admin/">Адмінка</a>
+		        	{% endif %}
 		        	<a style="margin-right: 5px;" class="nav-link active" href="{% url 'login:logout' %}">Вийти</a>
 			    {% else %}
 				    <a style="margin-right: 5px;" class="btn btn-outline-success" href="{% url 'login:signup' %}">Реєстрація</a>
